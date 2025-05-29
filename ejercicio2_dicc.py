@@ -1,19 +1,22 @@
 alumnos = {}
-num_alumnos = int(input("Ingrese el número de alumnos del curso "))
+try:
+    num_alumnos = int(input("Ingrese el número de alumnos del curso "))
 
-for i in range(num_alumnos):
-    nom_alumno = input("Ingrese el nombre del alumno ")
-    if nom_alumno in alumnos:
-        print("El alumno ya existe ")
-    else:
-        opcion = "s"
-        notas = []
-        while  opcion == "s":
-            nota = 0
-            nota = float(input("Ingrese la nota del alumno "))
-            notas.append(nota)
-            opcion = input("Desea ingresar otra nota (s/n) ")
-        alumnos[nom_alumno] = notas
+    for i in range(num_alumnos):
+        nom_alumno = input("Ingrese el nombre del alumno ")
+        if nom_alumno in alumnos:
+            print("El alumno ya existe ")
+        else:
+            opcion = "s"
+            notas = []
+            while  opcion == "s":
+                nota = 0
+                nota = float(input("Ingrese la nota del alumno "))
+                notas.append(nota)
+                opcion = input("Desea ingresar otra nota (s/n) ")
+            alumnos[nom_alumno] = notas
+except ValueError:
+    print("HA INGRESADO UN NÚMERO ERRÓNEO")
 print(alumnos)
 for  nom_al in  alumnos:
     conta_nota = 0
